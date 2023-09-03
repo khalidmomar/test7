@@ -8,7 +8,7 @@ Suppose you are working as a Machine Learning Engineer in an e-commerce company 
 With the advancement in technology, it is imperative for Ebuss to grow quickly in the e-commerce market to become a major leader in the market because it has to compete with the likes of Amazon, Flipkart, etc., which are already market leaders.
 
 ## Solution
-Github link: https://github.com/ShivaSharaj/SentimentBasedProductRecommendationSystem.git
+Github link: [https://github.com/ShivaSharaj/SentimentBasedProductRecommendationSystem.git](https://github.com/khalidmomar/test7)
 
 ## Built with
 Python 3.9.7
