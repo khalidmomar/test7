@@ -1,0 +1,167 @@
+$ heroku logs --tail
+2023-09-04T19:35:35.464309+00:00 app[web.1]: if self._can_use_inplace_predict():
+2023-09-04T19:35:35.464309+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 1073, in _can_use_inplace_predict
+2023-09-04T19:35:35.464309+00:00 app[web.1]: predictor = self.get_params().get("predictor", None)
+2023-09-04T19:35:35.464313+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 695, in get_params
+2023-09-04T19:35:35.464313+00:00 app[web.1]: params.update(cp.__class__.get_params(cp, deep))
+2023-09-04T19:35:35.464314+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 692, in get_params
+2023-09-04T19:35:35.464314+00:00 app[web.1]: params = super().get_params(deep)
+2023-09-04T19:35:35.464314+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/sklearn/base.py", line 210, in get_params
+2023-09-04T19:35:35.464315+00:00 app[web.1]: value = getattr(self, key)
+2023-09-04T19:35:35.464315+00:00 app[web.1]: AttributeError: 'XGBModel' object has no attribute 'callbacks'
+2023-09-04T19:35:35.691066+00:00 heroku[router]: at=info method=POST path="/predict" host=sbpr-b7a4209fa19b.herokuapp.com request_id=66de18e0-5a50-482d-9154-ef35437d50ed fwd="176.47.117.63" dyno=web.1 connect=0ms service=9721ms st
+atus=500 bytes=438 protocol=https
+2023-09-04T19:35:35.838443+00:00 app[web.1]: 10.1.26.180 - - [04/Sep/2023:19:35:35 +0000] "POST /predict HTTP/1.1" 500 265 "https://sbpr-b7a4209fa19b.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100
+101 Firefox/115.0"
+2023-09-04T19:54:55.000000+00:00 app[api]: Build started by user khalidomarasu@gmail.com
+2023-09-04T19:55:52.480363+00:00 app[api]: Deploy 7b257173 by user khalidomarasu@gmail.com
+2023-09-04T19:55:52.480363+00:00 app[api]: Release v4 created by user khalidomarasu@gmail.com
+2023-09-04T19:55:52.801966+00:00 heroku[web.1]: Restarting
+2023-09-04T19:55:52.865666+00:00 heroku[web.1]: State changed from up to starting
+2023-09-04T19:55:53.906583+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2023-09-04T19:55:54.166151+00:00 app[web.1]: [2023-09-04 19:55:53 +0000] [8] [INFO] Worker exiting (pid: 8)
+2023-09-04T19:55:54.509311+00:00 app[web.1]: [2023-09-04 19:55:54 +0000] [2] [INFO] Handling signal: term
+2023-09-04T19:55:54.681823+00:00 app[web.1]: [2023-09-04 19:55:54 +0000] [7] [INFO] Worker exiting (pid: 7)
+2023-09-04T19:55:54.712101+00:00 app[web.1]: [2023-09-04 19:55:54 +0000] [2] [WARNING] Worker with pid 8 was terminated due to signal 15
+2023-09-04T19:56:07.528084+00:00 heroku[web.1]: Starting process with command `gunicorn app:app`
+2023-09-04T19:56:09.056663+00:00 app[web.1]: [2023-09-04 19:56:09 +0000] [2] [INFO] Starting gunicorn 20.1.0
+2023-09-04T19:56:09.057390+00:00 app[web.1]: [2023-09-04 19:56:09 +0000] [2] [INFO] Listening at: http://0.0.0.0:48431 (2)
+2023-09-04T19:56:09.057460+00:00 app[web.1]: [2023-09-04 19:56:09 +0000] [2] [INFO] Using worker: sync
+2023-09-04T19:56:09.064344+00:00 app[web.1]: [2023-09-04 19:56:09 +0000] [7] [INFO] Booting worker with pid: 7
+2023-09-04T19:56:09.077536+00:00 app[web.1]: [2023-09-04 19:56:09 +0000] [8] [INFO] Booting worker with pid: 8
+2023-09-04T19:56:09.360347+00:00 heroku[web.1]: State changed from starting to up
+2023-09-04T19:56:11.374066+00:00 app[web.1]: [nltk_data] Downloading package stopwords to
+2023-09-04T19:56:11.374103+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.387757+00:00 app[web.1]: [nltk_data] Downloading package stopwords to
+2023-09-04T19:56:11.389510+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.393668+00:00 app[web.1]: [nltk_data]   Unzipping corpora/stopwords.zip.
+2023-09-04T19:56:11.397777+00:00 app[web.1]: [nltk_data] Downloading package punkt to
+2023-09-04T19:56:11.401959+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.411811+00:00 app[web.1]: [nltk_data]   Unzipping corpora/stopwords.zip.
+2023-09-04T19:56:11.416076+00:00 app[web.1]: [nltk_data] Downloading package punkt to
+2023-09-04T19:56:11.418136+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.528035+00:00 app[web.1]: [nltk_data]   Unzipping tokenizers/punkt.zip.
+2023-09-04T19:56:11.531877+00:00 app[web.1]: [nltk_data]   Unzipping tokenizers/punkt.zip.
+2023-09-04T19:56:11.800725+00:00 app[web.1]: [nltk_data] Downloading package averaged_perceptron_tagger to
+2023-09-04T19:56:11.800740+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.824427+00:00 app[web.1]: [nltk_data] Downloading package averaged_perceptron_tagger to
+2023-09-04T19:56:11.824442+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.841099+00:00 app[web.1]: [nltk_data]   Unzipping taggers/averaged_perceptron_tagger.zip.
+2023-09-04T19:56:11.841264+00:00 app[web.1]: [nltk_data] [Errno 2] No such file or directory: '/app/.heroku/python/
+2023-09-04T19:56:11.841275+00:00 app[web.1]: [nltk_data]     nltk_data/taggers/averaged_perceptron_tagger.zip'
+2023-09-04T19:56:11.841384+00:00 app[web.1]: [nltk_data] Downloading package wordnet to
+2023-09-04T19:56:11.841396+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.865329+00:00 app[web.1]: [nltk_data]   Package wordnet is already up-to-date!
+2023-09-04T19:56:11.865427+00:00 app[web.1]: [nltk_data] Downloading package omw-1.4 to
+2023-09-04T19:56:11.865492+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.868841+00:00 app[web.1]: [nltk_data]   Unzipping taggers/averaged_perceptron_tagger.zip.
+2023-09-04T19:56:11.913923+00:00 app[web.1]: [nltk_data] Downloading package wordnet to
+2023-09-04T19:56:11.913939+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:11.932411+00:00 app[web.1]: [nltk_data]   Package wordnet is already up-to-date!
+2023-09-04T19:56:11.932517+00:00 app[web.1]: [nltk_data] Downloading package omw-1.4 to
+2023-09-04T19:56:11.932529+00:00 app[web.1]: [nltk_data]     /app/.heroku/python/nltk_data...
+2023-09-04T19:56:12.127617+00:00 app[web.1]: [19:56:12] WARNING: ../src/learner.cc:1203:
+2023-09-04T19:56:12.127639+00:00 app[web.1]: If you are loading a serialized model (like pickle in Python, RDS in R) generated by
+2023-09-04T19:56:12.127639+00:00 app[web.1]: older XGBoost, please export the model by calling `Booster.save_model` from that version
+2023-09-04T19:56:12.127640+00:00 app[web.1]: first, then load it back in current version. See:
+2023-09-04T19:56:12.127641+00:00 app[web.1]:
+2023-09-04T19:56:12.127642+00:00 app[web.1]: https://xgboost.readthedocs.io/en/latest/tutorials/saving_model.html
+2023-09-04T19:56:12.127643+00:00 app[web.1]:
+2023-09-04T19:56:12.127643+00:00 app[web.1]: for more details about differences between saving model and serializing.
+2023-09-04T19:56:12.127658+00:00 app[web.1]:
+2023-09-04T19:56:12.127695+00:00 app[web.1]: [19:56:12] WARNING: ../src/learner.cc:888: Found JSON model saved before XGBoost 1.6, please save the model using current version again. The support for old JSON model will be discontin
+ued in XGBoost 2.3.
+2023-09-04T19:56:12.166391+00:00 app[web.1]: [19:56:12] WARNING: ../src/learner.cc:1203:
+2023-09-04T19:56:12.166394+00:00 app[web.1]: If you are loading a serialized model (like pickle in Python, RDS in R) generated by
+2023-09-04T19:56:12.166394+00:00 app[web.1]: older XGBoost, please export the model by calling `Booster.save_model` from that version
+2023-09-04T19:56:12.166394+00:00 app[web.1]: first, then load it back in current version. See:
+2023-09-04T19:56:12.166394+00:00 app[web.1]:
+2023-09-04T19:56:12.166395+00:00 app[web.1]: https://xgboost.readthedocs.io/en/latest/tutorials/saving_model.html
+2023-09-04T19:56:12.166395+00:00 app[web.1]:
+2023-09-04T19:56:12.166395+00:00 app[web.1]: for more details about differences between saving model and serializing.
+2023-09-04T19:56:12.166415+00:00 app[web.1]:
+2023-09-04T19:56:12.166452+00:00 app[web.1]: [19:56:12] WARNING: ../src/learner.cc:888: Found JSON model saved before XGBoost 1.6, please save the model using current version again. The support for old JSON model will be discontin
+ued in XGBoost 2.3.
+2023-09-04T19:56:12.188996+00:00 app[web.1]: [19:56:12] WARNING: ../src/learner.cc:553:
+2023-09-04T19:56:12.188997+00:00 app[web.1]: If you are loading a serialized model (like pickle in Python, RDS in R) generated by
+2023-09-04T19:56:12.188997+00:00 app[web.1]: older XGBoost, please export the model by calling `Booster.save_model` from that version
+2023-09-04T19:56:12.188998+00:00 app[web.1]: first, then load it back in current version. See:
+2023-09-04T19:56:12.188998+00:00 app[web.1]:
+2023-09-04T19:56:12.188999+00:00 app[web.1]: https://xgboost.readthedocs.io/en/latest/tutorials/saving_model.html
+2023-09-04T19:56:12.188999+00:00 app[web.1]:
+2023-09-04T19:56:12.188999+00:00 app[web.1]: for more details about differences between saving model and serializing.
+2023-09-04T19:56:12.188999+00:00 app[web.1]:
+2023-09-04T19:56:12.235350+00:00 app[web.1]: [19:56:12] WARNING: ../src/learner.cc:553:
+2023-09-04T19:56:12.235351+00:00 app[web.1]: If you are loading a serialized model (like pickle in Python, RDS in R) generated by
+2023-09-04T19:56:12.235351+00:00 app[web.1]: older XGBoost, please export the model by calling `Booster.save_model` from that version
+2023-09-04T19:56:12.235351+00:00 app[web.1]: first, then load it back in current version. See:
+2023-09-04T19:56:12.235352+00:00 app[web.1]:
+2023-09-04T19:56:12.235352+00:00 app[web.1]: https://xgboost.readthedocs.io/en/latest/tutorials/saving_model.html
+2023-09-04T19:56:12.235352+00:00 app[web.1]:
+2023-09-04T19:56:12.235352+00:00 app[web.1]: for more details about differences between saving model and serializing.
+2023-09-04T19:56:12.235366+00:00 app[web.1]:
+2023-09-04T19:56:13.816922+00:00 app[web.1]: [2023-09-04 19:56:13 +0000] [2] [INFO] Shutting down: Master
+2023-09-04T19:56:15.700998+00:00 heroku[web.1]: Process exited with status 0
+2023-09-04T19:56:30.000000+00:00 app[api]: Build succeeded
+2023-09-04T20:01:48.380840+00:00 heroku[router]: at=info method=GET path="/" host=sbpr-b7a4209fa19b.herokuapp.com request_id=c096ccff-c761-4fa8-a223-df52e750e03f fwd="176.47.117.63" dyno=web.1 connect=2ms service=11ms status=200 b
+ytes=3119 protocol=https
+2023-09-04T20:01:48.380177+00:00 app[web.1]: 10.1.52.24 - - [04/Sep/2023:20:01:48 +0000] "GET / HTTP/1.1" 200 2964 "https://dashboard.heroku.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0"
+2023-09-04T20:02:11.283790+00:00 app[web.1]: [2023-09-04 20:02:10,949] ERROR in app: Exception on /predict [POST]
+2023-09-04T20:02:11.283800+00:00 app[web.1]: Traceback (most recent call last):
+2023-09-04T20:02:11.283800+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+2023-09-04T20:02:11.283801+00:00 app[web.1]: response = self.full_dispatch_request()
+2023-09-04T20:02:11.283801+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+2023-09-04T20:02:11.283801+00:00 app[web.1]: rv = self.handle_user_exception(e)
+2023-09-04T20:02:11.283802+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+2023-09-04T20:02:11.283802+00:00 app[web.1]: rv = self.dispatch_request()
+2023-09-04T20:02:11.283802+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+2023-09-04T20:02:11.283802+00:00 app[web.1]: return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+2023-09-04T20:02:11.283803+00:00 app[web.1]: File "/app/app.py", line 23, in prediction
+2023-09-04T20:02:11.283803+00:00 app[web.1]: items = sentiment_model.getSentimentRecommendations(user)
+2023-09-04T20:02:11.283804+00:00 app[web.1]: File "/app/model.py", line 59, in getSentimentRecommendations
+2023-09-04T20:02:11.283804+00:00 app[web.1]: filtered_data["predicted_sentiment"] = self.model.predict(X)
+2023-09-04T20:02:11.283804+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 1551, in predict
+2023-09-04T20:02:11.283805+00:00 app[web.1]: class_probs = super().predict(
+2023-09-04T20:02:11.283805+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 1138, in predict
+2023-09-04T20:02:11.283806+00:00 app[web.1]: if self._can_use_inplace_predict():
+2023-09-04T20:02:11.283806+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 1073, in _can_use_inplace_predict
+2023-09-04T20:02:11.283807+00:00 app[web.1]: predictor = self.get_params().get("predictor", None)
+2023-09-04T20:02:11.283807+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 695, in get_params
+2023-09-04T20:02:11.283807+00:00 app[web.1]: params.update(cp.__class__.get_params(cp, deep))
+2023-09-04T20:02:11.283807+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 692, in get_params
+2023-09-04T20:02:11.283808+00:00 app[web.1]: params = super().get_params(deep)
+2023-09-04T20:02:11.283808+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/sklearn/base.py", line 210, in get_params
+2023-09-04T20:02:11.283809+00:00 app[web.1]: value = getattr(self, key)
+2023-09-04T20:02:11.283809+00:00 app[web.1]: AttributeError: 'XGBModel' object has no attribute 'callbacks'
+2023-09-04T20:02:11.546585+00:00 heroku[router]: at=info method=POST path="/predict" host=sbpr-b7a4209fa19b.herokuapp.com request_id=3d5cf206-6101-497f-9892-cb282046a028 fwd="176.47.117.63" dyno=web.1 connect=0ms service=12624ms s
+tatus=500 bytes=438 protocol=https
+2023-09-04T20:02:11.590086+00:00 app[web.1]: 10.1.52.24 - - [04/Sep/2023:20:02:11 +0000] "POST /predict HTTP/1.1" 500 265 "https://sbpr-b7a4209fa19b.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/201001
+01 Firefox/115.0"
+2023-09-04T20:02:55.214805+00:00 app[web.1]: great
+2023-09-04T20:03:22.423954+00:00 heroku[router]: at=info method=GET path="/" host=sbpr-b7a4209fa19b.herokuapp.com request_id=3e055112-b6bb-4435-bb6a-6a6244927dfe fwd="176.47.117.63" dyno=web.1 connect=0ms service=8638ms status=200
+ bytes=3119 protocol=https
+2023-09-04T20:03:22.423625+00:00 app[web.1]: 10.1.95.236 - - [04/Sep/2023:20:03:22 +0000] "GET / HTTP/1.1" 200 2964 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.
+36 Edg/116.0.1938.69"
+2023-09-04T20:03:23.117156+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=POST path="/predictSentiment" host=sbpr-b7a4209fa19b.herokuapp.com request_id=a0bab93a-75ab-4ba9-8fd2-5f369b8c1c38 fwd="176.47.117.63
+" dyno=web.1 connect=0ms service=30004ms status=503 bytes=0 protocol=https
+2023-09-04T20:03:24.219178+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=sbpr-b7a4209fa19b.herokuapp.com request_id=9d686ba8-ca75-49f2-91a6-2058b2877f31 fwd="176.47.117.63" dyno=web.1 connect=0ms service=56ms s
+tatus=404 bytes=368 protocol=https
+2023-09-04T20:03:24.218783+00:00 app[web.1]: 10.1.95.236 - - [04/Sep/2023:20:03:24 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "https://sbpr-b7a4209fa19b.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+ (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.69"
+2023-09-04T20:03:24.236336+00:00 app[web.1]: [2023-09-04 20:03:23 +0000] [2] [CRITICAL] WORKER TIMEOUT (pid:8)
+2023-09-04T20:03:25.299077+00:00 app[web.1]: [2023-09-04 20:03:25 +0000] [2] [WARNING] Worker with pid 8 was terminated due to signal 9
+2023-09-04T20:03:25.691340+00:00 app[web.1]: [2023-09-04 20:03:25 +0000] [51] [INFO] Booting worker with pid: 51
+n3.9/site-packages/xgboost/sklearn.py", line 1138, in predict
+2023-09-04T20:03:39.403078+00:00 app[web.1]: if self._can_use_inplace_predict():
+2023-09-04T20:03:39.403079+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 1073, in _can_use_inplace_predict
+2023-09-04T20:03:39.403079+00:00 app[web.1]: predictor = self.get_params().get("predictor", None)
+2023-09-04T20:03:39.403079+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 695, in get_params
+2023-09-04T20:03:39.403079+00:00 app[web.1]: params.update(cp.__class__.get_params(cp, deep))
+2023-09-04T20:03:39.403080+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/xgboost/sklearn.py", line 692, in get_params
+2023-09-04T20:03:39.403080+00:00 app[web.1]: params = super().get_params(deep)
+2023-09-04T20:03:39.403080+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/sklearn/base.py", line 210, in get_params
+2023-09-04T20:03:39.403080+00:00 app[web.1]: value = getattr(self, key)
+2023-09-04T20:03:39.403081+00:00 app[web.1]: AttributeError: 'XGBModel' object has no attribute 'callbacks'
+2023-09-04T20:03:39.411730+00:00 app[web.1]: 10.1.95.236 - - [04/Sep/2023:20:03:39 +0000] "POST /predict HTTP/1.1" 500 265 "https://sbpr-b7a4209fa19b.herokuapp.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (K
+HTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.69"
+Terminate batch job (Y/N)? ^F

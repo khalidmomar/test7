@@ -47,6 +47,7 @@ class SentimentRecommenderModel:
     def getSentimentRecommendations(self, user):
         if (user in self.user_final_rating.index):
             # get the product recommedation using the trained ML model
+            print ('user found')
             recommendations = list(
                 self.user_final_rating.loc[user].sort_values(ascending=False)[0:20].index)
             filtered_data = self.cleaned_data[self.cleaned_data.id.isin(
