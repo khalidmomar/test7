@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, jsonify
 from model import SentimentRecommenderModel
 
 
-app = Flask(__name__)
+app = Flask('__name__')
 
 sentiment_model = SentimentRecommenderModel()
 
